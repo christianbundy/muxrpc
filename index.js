@@ -31,8 +31,6 @@ module.exports = function (remoteApi, localApi, serializer) {
   localApi = localApi || {}
   remoteApi = remoteApi || {}
 
-  console.log('LOCAL_API', localApi)
-
   //pass the manifest to the permissions so that it can know
   //what something should be.
   var perms = Permissions(localApi)
