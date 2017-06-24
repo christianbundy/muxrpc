@@ -52,6 +52,9 @@ module.exports = function initStream (localCall, codec, onClose) {
     },
     stream: function (stream) {
       stream.read = function (data, end) {
+        if(!data)
+          return stream.write(null, new TypeError('missing request data'))
+
         var name = data.name
         var type = data.type
         var err, value
